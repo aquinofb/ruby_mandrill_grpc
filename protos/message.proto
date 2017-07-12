@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package dynamic_mailer;
+
+service Messages {
+  rpc SendIt (Payload) returns (Response) {}
+}
+
+message Payload {
+  string email = 1;
+  string consumer_network_uuid = 2;
+  string event = 3;
+}
+
+message Response {
+  int32 status = 1;
+}
