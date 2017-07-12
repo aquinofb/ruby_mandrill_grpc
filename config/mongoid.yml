@@ -1,0 +1,6 @@
+development:
+  clients:
+    default:
+      database: dynamic_mailer_dev
+      hosts:
+        - localhost:27017

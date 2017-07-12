@@ -7,9 +7,9 @@ service Messages {
 }
 
 message Payload {
-  string email = 1;
-  string consumer_network_uuid = 2;
-  string event = 3;
+  string reference_uuid = 1;
+  string event = 2;
+  string email = 3;
 }
 
 message Response {

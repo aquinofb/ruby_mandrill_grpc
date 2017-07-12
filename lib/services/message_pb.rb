@@ -5,9 +5,9 @@ require 'google/protobuf'
 
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "dynamic_mailer.Payload" do
-    optional :email, :string, 1
-    optional :consumer_network_uuid, :string, 2
-    optional :event, :string, 3
+    optional :reference_uuid, :string, 1
+    optional :event, :string, 2
+    optional :email, :string, 3
   end
   add_message "dynamic_mailer.Response" do
     optional :status, :int32, 1

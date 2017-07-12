@@ -1,11 +1,7 @@
 class Event
-  def present?
-    true
-  end
+	include Mongoid::Document
 
-  class << self
-    def find_by(**args)
-      new
-    end
-  end
+	field :reference_uuid, type: String
+  field :event, type: String
+  field :mandrill_tpl, type: String
 end

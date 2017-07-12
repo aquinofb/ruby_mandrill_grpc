@@ -3,7 +3,7 @@ class MessagesService < DynamicMailer::Messages::Service
     event = find_event(message)
 
     status =
-      if event.present?
+      if !!event
         SendEmailJob.perform_async
         200
       else
@@ -18,7 +18,7 @@ class MessagesService < DynamicMailer::Messages::Service
   def find_event(message)
     Event.find_by(
       name: message.event,
-      consumer_network_uuid: message.consumer_network_uuid
+      reference_uuid: message.reference_uuid
     )
   end
 end

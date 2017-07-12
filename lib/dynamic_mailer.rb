@@ -3,6 +3,9 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'dotenv'
 Dotenv.load
 
+require 'mongoid'
+Mongoid.load!('config/mongoid.yml', :development)
+
 %w{
   sidekiq
   grpc
