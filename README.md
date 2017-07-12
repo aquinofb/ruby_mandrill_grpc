@@ -10,3 +10,5 @@ ruby server.rb
 gem install grpc-tools
 grpc_tools_ruby_protoc -I protos --ruby_out=lib/services --grpc_out=lib/services protos/*
 ```
+
+Mongoid [queries doc](https://docs.mongodb.com/mongoid/master/tutorials/mongoid-queries/).
