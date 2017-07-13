@@ -1,7 +1,14 @@
 ```shell
 mkdir -p tmp/mongodb
+
+// start databases
 mongod -dbpath=tmp/mongodb
-sidekiq -r ./lib/dynamic_mailer
+redis-server
+
+// start sidekiq
+sidekiq -r ./lib/dynamic_mailer.rb
+
+// start the server
 ruby server.rb
 ```
 
