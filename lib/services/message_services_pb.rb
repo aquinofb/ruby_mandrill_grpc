@@ -2,7 +2,6 @@
 # Source: message.proto for package 'dynamic_mailer'
 
 require 'grpc'
-require 'message_pb'
 
 module DynamicMailer
   module Messages

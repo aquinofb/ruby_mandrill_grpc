@@ -1,7 +1,7 @@
 class SendEmailJob
   include Sidekiq::Worker
 
-  def perform(event_id:, email:, template_vars: {}, attachments: [])
+  def perform(event_id, email)
     event = Event.find(event_id)
     MandrillMailer.send_email(
       from: {
@@ -11,8 +11,8 @@ class SendEmailJob
       to: email,
       template: event.mandrill_tpl,
       subject: 'Email from Dynamic Mailer',
-      template_vars: template_vars,
-      attachments: attachments
+      template_vars: {},
+      attachments: []
     )
   end
 end

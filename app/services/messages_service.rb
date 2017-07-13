@@ -4,7 +4,7 @@ class MessagesService < DynamicMailer::Messages::Service
 
     status =
       if !!event
-        SendEmailJob.perform_async
+        SendEmailJob.perform_async(event.id, message.email)
         200
       else
         404
