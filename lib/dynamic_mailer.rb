@@ -11,7 +11,7 @@ require 'dotenv'
 require 'mongoid'
 
 Dir[
-  *[File.join(app_path, '**/*.rb'), File.join(services_path, '**/*.rb')]
+  *[File.join(services_path, '**/*.rb'), File.join(app_path, '**/*.rb')]
 ].each {|file| require file }
 
 module DynamicMailer
