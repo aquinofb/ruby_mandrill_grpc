@@ -1,9 +1,8 @@
 root_path = File.expand_path('../../', __FILE__)
 app_path = File.join(root_path, 'app')
-services_path = File.join(root_path, 'lib', 'services')
+lib_path = File.join(root_path, 'lib')
 
-$LOAD_PATH.unshift(app_path)
-$LOAD_PATH.unshift(services_path)
+$LOAD_PATH.unshift(lib_path, app_path)
 
 require 'sidekiq'
 require 'grpc'
@@ -11,7 +10,7 @@ require 'dotenv'
 require 'mongoid'
 
 Dir[
-  *[File.join(services_path, '**/*.rb'), File.join(app_path, '**/*.rb')]
+  *[File.join(lib_path, '**/*.rb'), File.join(app_path, '**/*.rb')]
 ].each {|file| require file }
 
 module DynamicMailer
